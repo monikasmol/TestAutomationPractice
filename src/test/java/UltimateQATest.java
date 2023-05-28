@@ -69,12 +69,28 @@ public class UltimateQATest extends PageSetup {
             dropdownOption.click();
             assertTrue(dropdownOption.isSelected());
             //Java Stream od wersji 8
+
+//               for (String listOfCar : listOfCars) {
+//            WebElement dropdownOption = driver.findElementByXPath("//*[@value='" + listOfCar.toLowerCase() + "']");
+//            dropdownOption.click();
+//            assertTrue(dropdownOption.isSelected());
+//        }
         }
+
 
 
     }
 
+    @Test
+    public void testSix() {
+        WebElement buttonUsingXpath1 = driver.findElementByXPath("//span[text()='XPath tutorial for automation testers']" +
+                 "/ancestor::h4/following-sibling::div//button");
+        buttonUsingXpath1.click();
 
+
+        WebElement buttonSuccessText = driver.findElementByClassName("entry-title");
+        assertEquals("Button success", buttonSuccessText.getText());
+    }
 
 
      //div[@class='navbar-header']//img[@alt='Nasa'] - szukanie elementów w devtools
